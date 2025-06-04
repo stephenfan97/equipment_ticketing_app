@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>View Tickets</h2>
+<table class="table">
+    <thead>
+        <tr><th>ID</th><th>Equipment</th><th>Description</th><th>Status</th><th>Date</th></tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.id }}</td>
+            <td>{{ ticket.equipment_id }}</td>
+            <td>{{ ticket.description }}</td>
+            <td>{{ ticket.status }}</td>
+            <td>{{ ticket.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
